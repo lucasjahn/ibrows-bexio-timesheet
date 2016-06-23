@@ -118,7 +118,7 @@ function getTimes() {
                 body: `[
                     {
                         "field": "user_id",
-                        "value": 180
+                        "value": ${data['user_id']}
                     }
                 ]`
             }, function(error, response, body){
