@@ -1,0 +1,22 @@
+{
+  "name": "bexio-ibrows",
+  "description": "",
+  "main": "main.js",
+  "authors": [
+    "Lucas Jahn <lucas@ludwig-jahn.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-timer": "^1.3.4",
+    "lumx": "^1.0.6"
+  }
+}

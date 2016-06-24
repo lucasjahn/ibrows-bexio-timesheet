@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "auto-launch": "^2.0.1",
     "electron-json-storage": "^2.0.0",
     "electron-oauth2": "^2.0.0",
     "menubar": "*",
