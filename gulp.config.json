@@ -1,0 +1,28 @@
+{
+  "html": "./app/**/*.html",
+  "htmltemplates": "./app/**/*.html",
+  "vendorcss": [
+    "./bower_components/lumx/dist/lumx.css"
+  ],
+  "vendorjs": [
+    "bower_components/jquery/dist/jquery.min.js",
+    "bower_components/angular/angular.js",
+    "bower_components/angular-route/angular-route.min.js",
+    "bower_components/angular-animate/angular-animate.min.js",
+    "bower_components/angular-sanitize/angular-sanitize.min.js",
+    "bower_components/underscore/underscore-min.js",
+    "bower_components/moment/min/moment-with-locales.min.js",
+    "bower_components/velocity/velocity.min.js",
+    "bower_components/lumx/dist/lumx.min.js"
+  ],
+  "js": [
+    "./app/**/*module*.js",
+    "./app/**/*.js",
+    "!./app/{assets,assets/**}"
+  ],
+  "images": [
+    "./app/assets/img/**/*"
+  ],
+  "report": "./report/",
+  "build": "./app/"
+}
