@@ -1,10 +1,48 @@
-const electronOauth2 = require('electron-oauth2');
+const electron = require('electron');
+const app = electron.app;  // Module to control application life.
+
 const storage = require('electron-json-storage');
 const request = require('request');
 const queryString = require('querystring');
+
+// Keep a global reference of the window object, if you don't, the window will
+// be closed automatically when the JavaScript object is garbage collected.
+var mainWindow = null;
+
+// Quit when all windows are closed.
+app.on('window-all-closed', function() {
+    // On OS X it is common for applications and their menu bar
+    // to stay active until the user quits explicitly with Cmd + Q
+    if (process.platform != 'darwin') {
+        app.quit();
+    }
+});
+
+
 var menubar = require('menubar');
 
-var mb = menubar();
+var mb = menubar({
+    index: 'file://' + __dirname + '/app/index.html',
+    width: 400,
+    height: 400,
+    resizable: false,
+    'preload-window': true
+});
+
+//var AutoLaunch = require('auto-launch');
+
+/*var appLauncher = new AutoLaunch({
+    name: 'My NW.js or Electron app'
+});
+
+appLauncher.isEnabled().then(function(enabled){
+    if(enabled) return;
+    return appLauncher.enable()
+}).then(function(err){
+
+});
+
+appLauncher.enable(); */
 
 var config = {
     clientId: '6777100542.apps.bexio.com',
@@ -22,15 +60,15 @@ let scopes = [
     'task_show',
     'monitoring_show',
     'monitoring_edit',
-
 ];
 
 mb.on('ready', () => {
+    console.log('opened!');
     /*storage.clear(function(error) {
         if (error) throw error;
     });*/
 
-    storage.has('token', function(error, hasKey) {
+    /*storage.has('token', function(error, hasKey) {
         if (error) throw error;
 
         if (!hasKey) {
@@ -39,12 +77,9 @@ mb.on('ready', () => {
             mb.showWindow();
             getTimes();
         }
-    });
+    });*/
 });
 
-mb.on('after-create-window', () => {
-
-});
 
 function getAcessToken() {
     const windowParams = {

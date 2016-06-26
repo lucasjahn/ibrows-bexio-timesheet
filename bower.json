@@ -1,0 +1,30 @@
+{
+  "name": "bexio-ibrows",
+  "description": "",
+  "main": "main.js",
+  "authors": [
+    "Lucas Jahn <lucas@ludwig-jahn.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-timer": "^1.3.4",
+    "lumx": "^1.0.6",
+    "angular": "^1.5.7",
+    "angular-animate": "^1.5.7",
+    "angular-sanitize": "^1.5.7",
+    "underscore": "^1.8.3",
+    "angular-route": "^1.5.7",
+    "angular-electron": "^0.2.1",
+    "ngstorage": "^0.3.10",
+    "humanize-duration": "^2.8.0"
+  }
+}
