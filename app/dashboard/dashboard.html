@@ -1,69 +1,25 @@
-<section id="dashboard-view" class="mainbar">
-  <section class="matter">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <ul class="today-datas">
-            <li class="blightblue">
-              <div class="pull-left"><i class="fa fa-plane"></i></div>
-              <div class="datas-text pull-right">
-                <span class="bold">May 18 - 19, 2015</span> Castle Resort, Neverland
-              </div>
-              <div class="clearfix"></div>
-            </li>
+<div>
+    <header class="clearfix">
+        <img src="assets/img/logo-ibr.svg" width="140" alt="">
+    </header>
+    <section id="content" class="content">
 
-            <li class="borange">
-              <div class="pull-left"><i class="fa fa-envelope"></i></div>
-              <div class="datas-text pull-right">
-                <span class="bold">{{vm.messageCount}}</span> Messages
-              </div>
-              <div class="clearfix"></div>
+        <ul class="list">
+            <li class="list-row list-row--has-separator" ng-repeat="time in vm.times">
+                <div class="list-row__primary">
+                    <i class="icon mdi ng-isolate-scope mdi-pencil icon--s icon--grey icon--flat"
+                       ng-class="lxIcon.getClass()" lx-id="pencil" lx-size="s" lx-color="grey" lx-type="flat"></i>
+                </div>
+                <div class="list-row__content">
+                    <span class="display-block">Kontakt: {{ time.contact.name_1 }}</span>
+                    <span class="display-block" ng-show="time.project">Project: {{ time.project.name }}</span>
+                    <span class="display-block" ng-show="time.client_service">Service: {{ time.client_service.name }}</span>
+                    <span class="display-block">Duration: {{ time.duration | date:'HH:mm:ss' }}</span>
+                    <span class="display-block">Date: {{ time.date | date : 'dd.MM.yyyy' }}</span>
+                </div>
             </li>
+        </ul>
 
-          </ul>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="widget wviolet">
-            <div ht-widget-header title="People" allow-collapse="true"></div>
-            <div class="widget-content text-center text-info">
-              <table class="table table-condensed table-striped">
-                <thead>
-                  <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Age</th>
-                    <th>Location</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr ng-repeat="p in vm.people">
-                    <td>{{p.firstName}}</td>
-                    <td>{{p.lastName}}</td>
-                    <td>{{p.age}}</td>
-                    <td>{{p.location}}</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="widget-foot">
-              <div class="clearfix"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="widget wgreen">
-            <div ht-widget-header title="{{vm.news.title}}" allow-collapse="true"></div>
-            <div class="widget-content text-center text-info">
-              <small>{{vm.news.description}}</small>
-            </div>
-            <div class="widget-foot">
-              <div class="clearfix"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</section>
+        <timer interval="1000">{{hours}} hour{{vm.hoursS}}, {{vm.minutes}} minute{{vm.minutesS}}, {{vm.seconds}} second{{vm.secondsS}}.</timer>
+    </section>
+</div>

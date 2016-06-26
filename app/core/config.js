@@ -3,32 +3,16 @@
 
   var core = angular.module('app.core');
 
-  core.config(toastrConfig);
+  core
+      .config(['remoteProvider', function(remoteProvider) {
+        remoteProvider.register('electron-oauth2');
+      }])
+      .run(['$http', '$localStorage', function($http, $localStorage) {
+          if ($localStorage.userData) {
+              $http.defaults.headers.common.Authorization = `Bearer ${$localStorage.userData.access_token}`;
+              $http.defaults.headers.common.Accept = 'application/json';
+          }
+      }]);
 
-  toastrConfig.$inject = ['toastr'];
-  /* @ngInject */
-  function toastrConfig(toastr) {
-    toastr.options.timeOut = 4000;
-    toastr.options.positionClass = 'toast-bottom-right';
-  }
-
-  var config = {
-    appErrorPrefix: '[bexioTt Error] ',
-    appTitle: 'bexioTt'
-  };
-
-  core.value('config', config);
-
-  core.config(configure);
-
-  configure.$inject = ['$logProvider', 'routerHelperProvider', 'exceptionHandlerProvider'];
-  /* @ngInject */
-  function configure($logProvider, routerHelperProvider, exceptionHandlerProvider) {
-    if ($logProvider.debugEnabled) {
-      $logProvider.debugEnabled(true);
-    }
-    exceptionHandlerProvider.configure(config.appErrorPrefix);
-    routerHelperProvider.configure({ docTitle: config.appTitle + ': ' });
-  }
 
 })();

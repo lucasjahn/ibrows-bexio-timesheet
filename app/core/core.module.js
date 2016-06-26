@@ -5,8 +5,12 @@
     .module('app.core', [
         'ngAnimate',
         'ngSanitize',
+        'ngRoute',
 
         // 3rd paty
-        'lumx'
+        'lumx',
+        'angular-electron',
+        'ngStorage',
+        'timer'
     ]);
 })();

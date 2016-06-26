@@ -15,7 +15,7 @@ gulp.task('help', plug.taskListing);
  * @return {Stream}
  */
 gulp.task('css', function () {
-    return gulp.src('src/scss/main.scss')
+    return gulp.src('app/assets/sass/main.scss')
         .pipe(plug.sass({errLogToConsole: true}))
         .pipe(gulp.dest('app/assets/css'))
         .pipe(plug.sourcemaps.init())
@@ -55,18 +55,18 @@ gulp.task('js', function() {
     var source = [].concat(paths.js, paths.build);
     return gulp
         .src(source)
-        //.pipe(plug.sourcemaps.init()) // get screwed up in the file rev process
+        .pipe(plug.sourcemaps.init()) // get screwed up in the file rev process
         .pipe(plug.concat('main.min.js'))
         .pipe(plug.ngAnnotate({
             add: true,
             single_quotes: true
         }))
         .pipe(plug.bytediff.start())
-        .pipe(plug.uglify({
+        /*.pipe(plug.uglify({
             mangle: true
-        }))
+        })) */
         .pipe(plug.bytediff.stop(bytediffFormatter))
-        //.pipe(plug.sourcemaps.write('./'))
+        .pipe(plug.sourcemaps.write())
         .pipe(gulp.dest(paths.build + 'assets/js/'));
 });
 

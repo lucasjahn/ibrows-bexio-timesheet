@@ -22,6 +22,9 @@
     "angular-animate": "^1.5.7",
     "angular-sanitize": "^1.5.7",
     "underscore": "^1.8.3",
-    "angular-route": "^1.5.7"
+    "angular-route": "^1.5.7",
+    "angular-electron": "^0.2.1",
+    "ngstorage": "^0.3.10",
+    "humanize-duration": "^2.8.0"
   }
 }

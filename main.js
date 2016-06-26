@@ -1,8 +1,6 @@
 const electron = require('electron');
 const app = electron.app;  // Module to control application life.
 
-const electronOauth2 = require('electron-oauth2');
-
 const storage = require('electron-json-storage');
 const request = require('request');
 const queryString = require('querystring');
@@ -25,15 +23,15 @@ var menubar = require('menubar');
 
 var mb = menubar({
     index: 'file://' + __dirname + '/app/index.html',
+    width: 400,
+    height: 400,
     resizable: false,
-    'show-dock-icon': true,
-    'preload-window': true,
-    'transparent': true
+    'preload-window': true
 });
 
-var AutoLaunch = require('auto-launch');
+//var AutoLaunch = require('auto-launch');
 
-var appLauncher = new AutoLaunch({
+/*var appLauncher = new AutoLaunch({
     name: 'My NW.js or Electron app'
 });
 
@@ -44,7 +42,7 @@ appLauncher.isEnabled().then(function(enabled){
 
 });
 
-appLauncher.enable();
+appLauncher.enable(); */
 
 var config = {
     clientId: '6777100542.apps.bexio.com',
@@ -65,6 +63,7 @@ let scopes = [
 ];
 
 mb.on('ready', () => {
+    console.log('opened!');
     /*storage.clear(function(error) {
         if (error) throw error;
     });*/
