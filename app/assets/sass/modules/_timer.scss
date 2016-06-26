@@ -1,0 +1,42 @@
+.timer {
+  text-align: center;
+  padding: 20px;
+  font-size: 2em;
+}
+
+.list-row {
+  padding: 18px 0;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  opacity: 0.6;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.project-contact, .project-service {
+  font-size: 13px;
+  opacity: 0.5;
+}
+
+.project-title {
+  font-size: 16px;
+  line-height: 1.3em;
+}
+
+.project-time {
+  font-size: 23px;
+}
+
+.content-left {
+  float: left;
+  width: 85%;
+}
+.content-right {
+  float: right;
+  width: 15%;
+  text-align: right;
+}

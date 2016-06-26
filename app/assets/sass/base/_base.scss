@@ -1,9 +1,58 @@
-body {
+html, body {
   background: #3D474C;
   color: #fff;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+  display: none;
+}
+
 header {
   background: #fff;
-  padding: 20px;
+  height: 95px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  img {
+    position: absolute;
+    top: 47px;
+    left: 20px;
+  }
+}
+
+.app-wrapper {
+  padding: 95px 0 0;
+}
+
+.content {
+  padding: 0 30px 55px;
+}
+
+footer {
+  background: #a0c425;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 10px;
+  text-align: center;
+  z-index: 10;
+
+  .icon {
+    color: #a0c425;
+    font-size: 45px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -35px;
+    transition: all ease-in-out 0.2s;
+
+    &:hover {
+      top: -50px;
+      cursor: pointer;
+    }
+  }
 }

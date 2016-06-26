@@ -5036,10 +5036,84 @@
   filter: FlipV;
   -ms-filter: "FlipV"; }
 
-body {
+html, body {
   background: #3D474C;
   color: #fff; }
 
+::-webkit-scrollbar {
+  width: 0;
+  display: none; }
+
 header {
   background: #fff;
-  padding: 20px; }
+  height: 95px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10; }
+  header img {
+    position: absolute;
+    top: 47px;
+    left: 20px; }
+
+.app-wrapper {
+  padding: 95px 0 0; }
+
+.content {
+  padding: 0 30px 55px; }
+
+footer {
+  background: #a0c425;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 10px;
+  text-align: center;
+  z-index: 10; }
+  footer .icon {
+    color: #a0c425;
+    font-size: 45px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -35px;
+    transition: all ease-in-out 0.2s; }
+    footer .icon:hover {
+      top: -50px;
+      cursor: pointer; }
+
+.timer {
+  text-align: center;
+  padding: 20px;
+  font-size: 2em; }
+
+.list-row {
+  padding: 18px 0;
+  overflow: hidden;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0.6;
+  transition: all ease-in-out 0.2s; }
+  .list-row:hover {
+    opacity: 1; }
+
+.project-contact, .project-service {
+  font-size: 13px;
+  opacity: 0.5; }
+
+.project-title {
+  font-size: 16px;
+  line-height: 1.3em; }
+
+.project-time {
+  font-size: 23px; }
+
+.content-left {
+  float: left;
+  width: 85%; }
+
+.content-right {
+  float: right;
+  width: 15%;
+  text-align: right; }

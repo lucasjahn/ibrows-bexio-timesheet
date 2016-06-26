@@ -25,6 +25,7 @@
     "angular-route": "^1.5.7",
     "angular-electron": "^0.2.1",
     "ngstorage": "^0.3.10",
-    "humanize-duration": "^2.8.0"
+    "moment": "~2.9.0",
+    "humanize-duration": "~2.8.0"
   }
 }
